@@ -48,8 +48,19 @@ public class HealineAutomation {
         MobileElement el4 = (MobileElement) driver.findElementByXPath("(//android.widget.ImageView[@content-desc=\"This is news image\"])[2]");
         el4.click();
 
+        Thread.sleep(3000);
+
+       String CurrentActivity = driver.currentActivity();
+
+        if (CurrentActivity.equals(".WebViewBrowserActivity")) {
+            System.out.println("Headline was opened in browser successfully!"); }
+        else {
+                System.out.println("Test failed");
+
+        }}
 
 
 
 
-    }}
+
+    }
