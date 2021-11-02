@@ -13,7 +13,7 @@ public class SignupAutomation {
 
 
 
-    public static void main (String[] args) throws MalformedURLException {
+    public static void main (String[] args) throws MalformedURLException, InterruptedException {
 
 
         DesiredCapabilities dc = new DesiredCapabilities();
@@ -38,6 +38,16 @@ public class SignupAutomation {
         MobileElement el4 = (MobileElement) ad.findElementById("n1x0nj4.news:id/bSignup");
         el4.click();
 
+        Thread.sleep(3000);
+
+        String CurrentActivity = ad.currentActivity();
+
+        if (CurrentActivity.equals(".ui.browse.NewsActivity")) {
+            System.out.println("Registration and login success!"); }
+        else {
+            System.out.println("Test failed");
+
+        }
 
 
 
